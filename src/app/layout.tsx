@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Roboto, Poppins } from "next/font/google";
+import { Roboto, Poppins, Raleway, Libre_Franklin, Inter, Source_Sans_3, Playfair_Display, Rubik, Lora } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -22,6 +24,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -29,7 +32,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Inn Sync - Your Goto Hotel Booking App",
+  title: "Inn Sync - Your Go-To Hotel Booking App",
   description: "Discover the best hotel rooms",
 };
 
@@ -44,9 +47,9 @@ export default function RootLayout({
         className={`${poppins.className} antialiased`}
       >
         <main className="font-normal">
-          {/* Header */}
+          <Header />
         {children}
-        {/*  */}
+        <Footer />
         </main>
       </body>
     </html>
