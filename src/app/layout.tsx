@@ -4,6 +4,7 @@ import "./globals.css";
 import { Roboto, Poppins, Raleway, Libre_Franklin, Inter, Source_Sans_3, Playfair_Display, Rubik, Lora } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -46,11 +47,13 @@ export default function RootLayout({
       <body
         className={`${poppins.className} antialiased`}
       >
-        <main className="font-normal">
-          <Header />
-        {children}
-        <Footer />
-        </main>
+        <ThemeProvider>
+          <main className="font-normal">
+            <Header />
+          {children}
+          <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
